@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "e6acf86c-cf09-4efc-991a-64b15ce68274",
+		"name": "Misc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1291326"
+	},
+	"item": [
+		{
+			"name": "Up",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzQ2MDE3MTIxLCJpYXQiOjE3NDYwMDk5MjEsInNjb3BlIjoiVVNFUiJ9.pv3S_axfepHeB9sdVhNznycfdHM8JgYcUB2fRKPa3ZF8LLNQtlX8b9wKzP4upLH-_6nz6TItBktMSxBLe9-Bt8xSVcU6HEGO5qakk9hOdmzzeyYFw0c_M5_PacZQFr_m-cVuKwuzvwuEtZb9-MG2sQFO9T9kJjslsL8-VHs6eo5QK3HDPOp1R7YBUFjT6psAGqAzDFCT-h82gVm9MKtIsiMac3_1xAtFBqyAJqJgibHGbLiTSkhs4y2lB5HiItEG9a2lua1SozJc1i2U3rmiUv3vGyH3eToJgpTqfhkROlza5eFAMiYFqQl7XDRwEJYL0GunE7EjWUKOnCSpd3P7YQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerByEmail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzQ2MDE2MjkxLCJpYXQiOjE3NDYwMDkwOTEsInNjb3BlIjoiU0NPUEVfQURNSU4ifQ.KB0qnZTscFyIrv1nX2UMMlsTMgZCYT0LVTTR3mK28dfryxZA4UF0RizfPZQ7JAJlG48WRllXK4L9HpzmQ2H90vJXp_whf5CJQTcpMrqYypu22oMeWQGAXqzlNoeH51IQm3RbHEUs-QERd36W2JLFbobQj_TxJZKomLav5SDhmZlrWogvTaBWxE8Cy_rlmGYOCXeXR02CHGuPGbNJVhTj_BtFf--nVnFdtSgGF32_GaMwCQPM2SsiJmQytobDq09KX-ZJCKRpQHwyWQsi8TW7N0MDshGBZr5WhYR_ySy18OfekCYWVKOXTlMUG_xZ6yuXoxpilC8-HgrMgPLceqXF2A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers/email?email=adam.rs@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"email"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "adam.rs@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzQ2MDE3MTIxLCJpYXQiOjE3NDYwMDk5MjEsInNjb3BlIjoiVVNFUiJ9.pv3S_axfepHeB9sdVhNznycfdHM8JgYcUB2fRKPa3ZF8LLNQtlX8b9wKzP4upLH-_6nz6TItBktMSxBLe9-Bt8xSVcU6HEGO5qakk9hOdmzzeyYFw0c_M5_PacZQFr_m-cVuKwuzvwuEtZb9-MG2sQFO9T9kJjslsL8-VHs6eo5QK3HDPOp1R7YBUFjT6psAGqAzDFCT-h82gVm9MKtIsiMac3_1xAtFBqyAJqJgibHGbLiTSkhs4y2lB5HiItEG9a2lua1SozJc1i2U3rmiUv3vGyH3eToJgpTqfhkROlza5eFAMiYFqQl7XDRwEJYL0GunE7EjWUKOnCSpd3P7YQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ZipCode OpenAPI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.zippopotam.us/us/98121",
+					"protocol": "http",
+					"host": [
+						"api",
+						"zippopotam",
+						"us"
+					],
+					"path": [
+						"us",
+						"98121"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzQ2MDE3MTY3LCJpYXQiOjE3NDYwMDk5NjcsInNjb3BlIjoiQURNSU4ifQ.HUiixTGJ7Z-uU222GSBg7a20BpSVtV44OAasNGiZfu2jbrCFysWk0hqVWXmqWRLHQKwASa5pc66fGutkICt68AQ55BHol3RfmdNrU-kDz7CUB3bwUnrSbOu9zlq_cU3tooyD54xWArqDNamN-yj_w495XtZNRtpnfaTdoL9m92yZav63PEEcJlbeVRPoVhEOIYqj1damH5T9pki2RbM23S9ekrJVSfMrQJT5-QSgnaV0cLmBJRR8i-SajsxeEu2vdU327N1CKGCXThTSqgHj87i1a9saV8DJL7a2_ht2HozEDKlXpw53MoI8ZiBkuBAYHqR3ndnzZaE-BiS5syZUkQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"adam\",\n  \"email\": \"adam.rs@gmail.com\",\n  \"phone\": \"+55 (12) 982553850\",\n  \"zipCode\": \"98121\",\n  \"password\": \"12345\",\n  \"role\": \"ADMIN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzQ2MDE3MTY3LCJpYXQiOjE3NDYwMDk5NjcsInNjb3BlIjoiQURNSU4ifQ.HUiixTGJ7Z-uU222GSBg7a20BpSVtV44OAasNGiZfu2jbrCFysWk0hqVWXmqWRLHQKwASa5pc66fGutkICt68AQ55BHol3RfmdNrU-kDz7CUB3bwUnrSbOu9zlq_cU3tooyD54xWArqDNamN-yj_w495XtZNRtpnfaTdoL9m92yZav63PEEcJlbeVRPoVhEOIYqj1damH5T9pki2RbM23S9ekrJVSfMrQJT5-QSgnaV0cLmBJRR8i-SajsxeEu2vdU327N1CKGCXThTSqgHj87i1a9saV8DJL7a2_ht2HozEDKlXpw53MoI8ZiBkuBAYHqR3ndnzZaE-BiS5syZUkQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"usr\",\n  \"email\": \"user@gmail.com\",\n  \"phone\": \"+55 (12) 982553850\",\n  \"zipCode\": \"98121\",\n  \"password\": \"12345\",\n  \"role\": \"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"user@gmail.com\",\n  \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"adam update\",\n  \"email\": \"adam.rs@gmail.com\",\n  \"phone\": \"+55 (12) 982553850\",\n  \"zipCode\": \"98121\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customers/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
