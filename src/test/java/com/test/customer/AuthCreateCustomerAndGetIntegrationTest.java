@@ -1,8 +1,8 @@
 package com.test.customer;
 
-import com.test.customer.infrastructure.rest.dto.LoginResponse;
-import com.test.customer.infrastructure.rest.dto.RequestCustomerDTO;
-import com.test.customer.infrastructure.rest.dto.ResponseCustomerDTO;
+import com.test.customer.dto.CustomerDTO;
+import com.test.customer.dto.LoginDTO;
+import com.test.customer.dto.request.RequestCustomerDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class AuthCreateCustomerAndGetIntegrationTest {
+public class AuthCreateCustomerAndGetIntegrationTest {
 
     @Autowired
     private WebTestClient webTestClient;
@@ -36,7 +37,7 @@ class AuthCreateCustomerAndGetIntegrationTest {
                 .bodyValue(loginPayload)
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(LoginResponse.class)
+                .expectBody(LoginDTO.class)
                 .returnResult()
                 .getResponseBody().accessToken();
     }
@@ -52,14 +53,14 @@ class AuthCreateCustomerAndGetIntegrationTest {
                 "USER"
         );
 
-        ResponseCustomerDTO createdCustomer = webTestClient.post()
+        CustomerDTO createdCustomer = webTestClient.post()
                 .uri("/customers")
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + bearerToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(requestCustomerDTO)
                 .exchange()
                 .expectStatus().isCreated()
-                .expectBody(ResponseCustomerDTO.class)
+                .expectBody(CustomerDTO.class)
                 .returnResult()
                 .getResponseBody();
 
@@ -68,12 +69,12 @@ class AuthCreateCustomerAndGetIntegrationTest {
         assertEquals("Jane Doe", createdCustomer.getName());
         assertEquals("janedoe@example.com", createdCustomer.getEmail());
 
-        ResponseCustomerDTO retrievedCustomer = webTestClient.get()
+        CustomerDTO retrievedCustomer = webTestClient.get()
                 .uri("/customers/" + createdCustomer.getId())
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + bearerToken)
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(ResponseCustomerDTO.class)
+                .expectBody(CustomerDTO.class)
                 .returnResult()
                 .getResponseBody();
 

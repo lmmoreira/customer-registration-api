@@ -1,0 +1,13 @@
+package com.test.customer.service.exception;
+
+public class CustomerAlreadyExistsException extends DomainException {
+
+    public CustomerAlreadyExistsException(String message) {
+        super(message);
+    }
+
+    public CustomerAlreadyExistsException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+}

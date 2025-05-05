@@ -2,7 +2,7 @@
 
 ## 🧾 Overview
 
-This application demonstrates the use of **Hexagonal Architecture** and **Domain-Driven Design (DDD)** principles using **Java 21** and **Spring Boot**. It includes a simple customer domain and an authentication flow, with support for external API calls using reactive programming (`WebClient`).
+Layered arch using **Java 21** and **Spring Boot**. It includes a simple customer domain and an authentication flow, with support for external API calls using reactive programming (`WebClient`).
 
 ---
 
@@ -82,37 +82,13 @@ All collections are available in the following file:
 
 ## 🧱 Architecture
 
-The system uses **Hexagonal Architecture (Ports and Adapters)**, as proposed by [Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture), to enforce separation between the core domain and infrastructure, promoting scalability and adaptability.
+Layered Arch
 
 ### Layered Design
 
-- **Domain**: Core business logic, aggregates, and value objects
-- **Application**: Use cases, business workflows (self-contained using the Command pattern)
-- **Infrastructure**: Adapters such as repositories and third-party services
-
-### Design Principles
-
-- Domain and Application layers are framework-agnostic and independent of infrastructure
-- Communication between layers follows the **Dependency Inversion Principle**
-
----
-
-## 🧠 Domain-Driven Design
-
-This project applies DDD principles to structure and encapsulate business rules. The domain layer remains isolated from frameworks and focuses on the core behavior of the system.
-
-### Package Structure
-
-```
-- domain/
-    - aggregates/
-    - valueobjects/
-- application/
-    - usecases/
-- infrastructure/
-    - repositories/
-    - services/
-```
+- **domain**: Entities
+- **service**: Services
+- **controllers**: Rest Controllers
 
 ---
 
